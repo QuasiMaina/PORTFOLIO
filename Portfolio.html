@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>QUASI'S PROJECTS</h1>
+    <div class="filter-buttons">
+        <button onclick="filterProjects('all')">All</button>
+        <button onclick="filterProjects('commercial')">Commercial</button>
+        <button onclick="filterProjects('film')">Film</button>
+        <button onclick="filterProjects('music-video')">Music Video</button>
+        <button onclick="filterProjects('documentary')">Documentary</button>
+    </div>
+    <div class="grid-container">
+        <div class="project-card film"> 
+            <img src="pics/Mofaya2.jpg"> 
+        </div>
+        <div class="project-card commercial">
+            <img src="pics/icea2.jpg"  >
+        </div>
+        <div class="project-card music-video">
+            <img src="pics/tetanus.jpg">
+        </div>
+        <div class="project-card documentary">
+            <img src="pics/vipingo.jpg">
+        </div>
+        <div class="project-card film">
+            <img src="pics/Paa.jpg">
+        </div>
+        <div class="project-card music-video">
+            <img src="pics/KENGELE.jpg">
+        </div>
+        <div class="project-card film">
+            <img src="pics/Pepeta2.jpg">
+        </div>
+        <div class="project-card film">
+            <img src="pics/prefects.jpg">
+        </div>
+        <div>
+            <div class="project-card commercial">
+            <img src="pics/JW.jpg">
+        </div>
+    </div>
+    <script>
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            if (category === 'all') {
+                cards.forEach(card => card.classList.remove('hidden'));
+            } else {
+                cards.forEach(card => {
+                    card.classList.toggle('hidden', !card.classList.contains(category));
+                });
+            }
+        }
+    </script>
+</body>
+</html>
